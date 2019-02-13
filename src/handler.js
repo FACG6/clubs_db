@@ -31,6 +31,7 @@ const handelServePages = (request, response) => {
     png: 'image/png',
     ico: 'image/x-icon',
   };
+
   const filepath = path.join(__dirname, '..', ...endpoint.split('/'));
   fs.readFile(filepath, (error, file) => {
     if (error) {
@@ -49,9 +50,15 @@ const handelServePages = (request, response) => {
     }
   });
 };
+
 const handeCreate = (request, response) => {
 
 };
+
+const handeClubs = (request, response) => {
+
+};
+
 const handelPageNotFound = (request, response) => {
   const pathfile = path.join(__dirname, '..', 'public', 'pages', 'pageNotFound.html');
   fs.readFile(pathfile, (error, file) => {
@@ -74,4 +81,6 @@ module.exports = {
   handelServePages,
   handeCreate,
   handelPageNotFound,
+  handeClubs
 };
+

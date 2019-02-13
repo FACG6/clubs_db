@@ -18,6 +18,5 @@ const fetch = (url, method, data, cb) => {
   xhr.send(data);
 };
 
-module.exports = fetch;
 
 
