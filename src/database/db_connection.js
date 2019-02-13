@@ -15,5 +15,4 @@ const options = {
   max: process.env.DB_MAX_CONNECTIONS || 2,
 };
 
-module.exports =new Pool(options);;
-
+module.exports = new Pool(options);
