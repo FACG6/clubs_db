@@ -1,0 +1,9 @@
+/* Page not Found style */
+.notFoundSection {
+    margin-top: 13rem;
+    text-align: center;
+}
+
+.notFoundSection--headOne {
+    color: red;
+}
