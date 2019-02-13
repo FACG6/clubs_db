@@ -6,10 +6,10 @@ const {
   Pool,
 } = pg;
 const params = url.parse(process.env.DATABASE_URL);
-const [username, password] = params.auth.split(':');
+
 const options = {
-  user: username,
-  password,
+  user: params.auth.split(':')[0],
+  password: params.auth.split(':')[1],
   port: params.port,
   host: params.hostname,
   database: params.pathname.split('/')[1],
