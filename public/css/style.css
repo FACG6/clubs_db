@@ -1,3 +1,4 @@
+
 @import 'https://fonts.googleapis.com/css?family=Lato';
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 
@@ -60,3 +61,12 @@ body {
 
 }
 
+/* Page not Found style */
+.notFoundSection {
+    margin-top: 13rem;
+    text-align: center;
+}
+
+.notFoundSection--headOne {
+    color: red;
+}
