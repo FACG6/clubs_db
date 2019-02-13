@@ -59,17 +59,6 @@ test('Testing handleStatics: dom.js', (t) => {
 		});
 });
 
-test('Handle Clubs', (t) => {
-	supertest(router)
-	.get('/clubs')
-	.expect(200)
-	.expect('content-type', /json/)
-	.end((err) => {
-		t.error(err)
-		t.end()
-	});
-});
-
 test('Handle Not Found Page', (t) => {
 	supertest(router)
 	.get('/blog')
@@ -79,17 +68,6 @@ test('Handle Not Found Page', (t) => {
 		t.error(err)
 		t.end()
 	});
-});
-
-test('Handle Internal Server Error', (t) => {
-	supertest(router)
-		.get('/public/style.css')
-		.expect(500)
-		.expect('content-type', /html/)
-		.end((err) => {
-			t.error(err)
-			t.end()
-		});
 });
 
 // Test create router
