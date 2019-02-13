@@ -10,4 +10,5 @@ const getType = (cb) => {
     }
   });
 };
+
 module.exports = getType;
