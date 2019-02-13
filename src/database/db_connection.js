@@ -14,6 +14,6 @@ const options = new Pool({
   ssl: params.hostname !== 'localhost',
   max: process.env.DB_MAX_CONNECTIONS || 2,
 });
-
+console.log('options = :' + Pool)
 module.exports = options;
 
