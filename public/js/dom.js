@@ -17,17 +17,26 @@ function querySelectors(ElementNames, selectors){
 	return elements;
 };
 
-// console.log(selectors);
+
 selectors.engBtn.addEventListener('click', () => {
-	// console.log('ddddddd');
-	// fetch('GET', )
-})
+	fetch('/clubs/engineering', 'GET', data, () => {
+		renderEngineeringClub();
+	});
+});
 
 selectors.englishBtn.addEventListener('click', () => {
-	// console.log('jjjjjjjj');
-}) 
+	fetch('/clubs/english', 'GET', data, () => {
+		renderEnglishClub();
+	});
+});
 
+function renderEngineeringClub(){
 
+};
+
+function renderEnglishClub(){
+
+};
 
 
 
