@@ -2,7 +2,9 @@ const pg = require('pg');
 const url = require('url');
 require('dotenv').config();
 
-const { Pool } = pg;
+const {
+  Pool,
+} = pg;
 const params = url.parse(process.env.DATABASE_URL);
 
 const options = {
@@ -14,5 +16,4 @@ const options = {
   ssl: params.hostname !== 'localhost',
   max: process.env.DB_MAX_CONNECTIONS || 2,
 };
-
 module.exports = new Pool(options);
