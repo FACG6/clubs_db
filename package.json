@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "tape test/db_test.js |tap-spec",
-    "start": "nodemon test/db_test.js |tap-spec"
-  , "checkConnect":"node src/database/db_connection.js"
+    "start": "nodemon test/db_test.js |tap-spec",
+    "checkConnect": "node src/database/db_connection.js"
   },
   "repository": {
     "type": "git",
