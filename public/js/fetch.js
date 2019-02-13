@@ -1,4 +1,4 @@
-const fetch = (url, method, data, cb) => {
+const requestXHR = (url, method, data, cb) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
@@ -7,7 +7,7 @@ const fetch = (url, method, data, cb) => {
         if (response.error) {
           cb(new TypeError(response.error));
         } else {
-          cb(null, JSON.parse(response.results));
+          cb(null, response);
         }
       } else {
         cb(new TypeError(response.error));
@@ -17,6 +17,4 @@ const fetch = (url, method, data, cb) => {
   xhr.open(method, url);
   xhr.send(data);
 };
-
-
 

@@ -1,6 +1,8 @@
-
 const fs = require('fs');
 const path = require('path');
+
+const getTypeClubs = require('./queries/getType');
+const getData = require('./queries/getClubs');
 
 const handelHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
@@ -51,12 +53,21 @@ const handelServePages = (request, response) => {
   });
 };
 
-const handeCreate = (request, response) => {
-
-};
 
 const handeClubs = (request, response) => {
-
+  getTypeClubs((err, clubs) => {
+    if (err) {
+      response.writeHead(500, {
+        'content-type': 'text/html',
+      });
+      response.end('<h1>Internal Server Error</h1>');
+    } else {
+      response.writeHead(200, {
+        'content-type': 'application/json',
+      });
+      response.end(JSON.stringify(clubs));
+    }
+  });
 };
 
 const handelPageNotFound = (request, response) => {
@@ -79,8 +90,6 @@ const handelPageNotFound = (request, response) => {
 module.exports = {
   handelHome,
   handelServePages,
-  handeCreate,
   handelPageNotFound,
-  handeClubs
+  handeClubs,
 };
-
