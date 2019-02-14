@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "node src/server.js",
+    "start": "node ./src/database/db_build.js || node src/server.js",
     "test": "tape test/test.js |tap-spec",
     "startTest": "node test/db_test.js |tap-spec",
     "checkConnect": "node src/database/db_connection.js",
