@@ -11,7 +11,6 @@
     "start": "nodemon test/db_test.js |tap-spec",
     "checkConnect": "node src/database/db_connection.js",
     "testDB": "NODE_ENV=test node test/db_test.js"
-
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,7 @@
     "dotenv": "^6.2.0",
     "env2": "^2.2.2",
     "pg": "^7.8.0",
+    "query-string": "^6.2.0",
     "url": "^0.11.0"
   }
 }

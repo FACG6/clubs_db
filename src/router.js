@@ -3,6 +3,7 @@ const {
   handelServePages,
   handeClubs,
   handelPageNotFound,
+  addClubHandel,
 } = require('./handler');
 
 const router = (request, response) => {
@@ -13,6 +14,8 @@ const router = (request, response) => {
     handelServePages(request, response);
   } else if (endpoint === '/clubs') {
     handeClubs(request, response);
+  } else if (endpoint === '/create-type') {
+    addClubHandel(request, response);
   } else {
     handelPageNotFound(request, response);
   }

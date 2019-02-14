@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-
+const queryString = require('query-string');
 const getTypeClubs = require('./queries/getType');
-const getData = require('./queries/getClubs');
+const addType = require('./queries/insertType');
 
 const handelHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
@@ -70,6 +70,31 @@ const handeClubs = (request, response) => {
   });
 };
 
+const addClubHandel = (request, response) => {
+  let data = '';
+  request.on('data', (chunk) => {
+    data += chunk;
+
+    // console.log('chunk', data);
+  });
+  // console.log('hfhfg', data);
+  request.on('end', () => {
+    const {
+      typeName,
+      image: typeImage,
+    } = queryString.parse(data);
+    console.log(queryString.parse(data));
+    addType(typeName, typeImage, (err) => {
+      if (err) return handelServePages(err, response);
+      response.writeHead(302, {
+        'Location': '/',
+      });
+      response.end();
+    });
+  });
+};
+
+
 const handelPageNotFound = (request, response) => {
   const pathfile = path.join(__dirname, '..', 'public', 'pages', 'pageNotFound.html');
   fs.readFile(pathfile, (error, file) => {
@@ -92,4 +117,5 @@ module.exports = {
   handelServePages,
   handelPageNotFound,
   handeClubs,
+  addClubHandel,
 };
