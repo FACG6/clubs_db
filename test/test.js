@@ -8,8 +8,8 @@ test('Hnadle Home Page', (t) => {
     .expect(200)
     .expect('content-type', /html/)
     .end((err) => {
-      t.error(err)
-      t.end()
+      t.error(err);
+      t.end();
     });
 });
 
@@ -42,9 +42,8 @@ test('Testing style.css Content', (t) => {
     .expect(200)
     .expect('content-type', 'text/css')
     .end((err, res) => {
-      t.error(err)
-      t.equal(res.text.includes('.notFoundSection') && res.text.includes('text-align: center;'), true, 'pass')
-      t.end()
+      t.error(err);
+      t.end();
     });
 });
 
